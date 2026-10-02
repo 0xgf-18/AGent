@@ -18,6 +18,12 @@ It will not run `adb`, fingerprint anything, list directories, or ask a second
 question. This is an enforced intake gate — `## ⛔ STEP 0 — INTAKE GATE` at the
 very top of `AGENTS.md` — evaluated ahead of the KB Custodian role.
 
+**Folder path exception:** If the agent is given a folder path (e.g.
+`C:\Users\me\Desktop\apps`), it searches that folder for `.apk` files. If exactly
+one APK is found, it proceeds with it. If multiple are found, it lists them and
+asks the user to pick one. If none are found, it outputs the one-line message
+above and stops.
+
 The gate opens the moment a real APK path arrives (`C:\...\app.apk`,
 `~/Downloads/app.apk`, `./app.apk`). The agent then runs the Research Loop:
 fingerprint → plan → experiment → gate → record → reindex, using the packer

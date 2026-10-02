@@ -18,6 +18,12 @@ Send the APK path to unpack.
 
 Then **stop and wait.**
 
+**Exception — folder path:** If the user provides a folder path (e.g.
+`C:\Users\me\Desktop\apps`), search that folder for `.apk` files. If exactly one
+APK is found, proceed with it. If multiple APKs are found, list them and ask
+the user to pick one. If no APKs are found, output the one-line message above
+and stop.
+
 ### Do NOT, while the gate is closed
 
 - Run any command or tool — no `adb`, no `apk_fingerprint.py`, no `env_probe.py`,
