@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1220"/>
+      <stop offset="1" stop-color="#141a2b"/>
+    </linearGradient>
+    <linearGradient id="feeds" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="900" rx="24" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="450" y="78" text-anchor="middle" font-size="42" font-weight="700" fill="#f8fafc" letter-spacing="1.5">3-TIER AI AGENT SYSTEM</text>
+
+  <!-- ===================== Connectors (drawn first, behind panels) ===================== -->
+  <g fill="none" stroke-width="3" filter="url(#glow)" opacity="0.9">
+    <!-- Tier 1 -> Tier 2 -->
+    <path d="M250,330 L250,378 Q250,400 272,400 L410,400 Q432,400 432,422 L432,452" stroke="#c084fc"/>
+    <path d="M450,330 L450,452" stroke="#22d3ee"/>
+    <path d="M650,330 L650,378 Q650,400 628,400 L490,400 Q468,400 468,422 L468,452" stroke="#f59e0b"/>
+    <!-- Tier 2 -> Tier 3 -->
+    <path d="M340,628 L340,660 Q340,682 318,682 L280,682 Q258,682 258,704 L258,736" stroke="#c084fc"/>
+    <path d="M450,628 L450,736" stroke="#22d3ee"/>
+    <path d="M560,628 L560,660 Q560,682 582,682 L620,682 Q642,682 642,704 L642,736" stroke="#f59e0b"/>
+  </g>
+
+  <!-- ===================== Tier 1: User Input Commands ===================== -->
+  <rect x="120" y="150" width="660" height="180" rx="20" fill="#10162880" stroke="#334155" stroke-width="1.5"/>
+  <text x="450" y="205" text-anchor="middle" font-size="24" font-weight="600" fill="#e2e8f0" letter-spacing="1">USER INPUT COMMANDS</text>
+
+  <g filter="url(#softglow)">
+    <rect x="160" y="240" width="180" height="56" rx="28" fill="#2a1240" stroke="#c084fc" stroke-width="2.5"/>
+    <rect x="360" y="240" width="180" height="56" rx="28" fill="#0c2e33" stroke="#22d3ee" stroke-width="2.5"/>
+    <rect x="560" y="240" width="180" height="56" rx="28" fill="#33280a" stroke="#f59e0b" stroke-width="2.5"/>
+  </g>
+  <text x="250" y="275" text-anchor="middle" font-size="20" font-weight="600" fill="#e9d5ff" letter-spacing="1.5">INGEST</text>
+  <text x="450" y="275" text-anchor="middle" font-size="20" font-weight="600" fill="#a5f3fc" letter-spacing="1.5">COMPILE</text>
+  <text x="650" y="275" text-anchor="middle" font-size="20" font-weight="600" fill="#fde68a" letter-spacing="1.5">SEARCH</text>
+
+  <!-- ===================== Tier 2: AI Agent Orchestrator ===================== -->
+  <rect x="230" y="452" width="440" height="176" rx="20" fill="#12193080" stroke="#3b4a63" stroke-width="1.5" filter="url(#softglow)"/>
+  <text x="450" y="502" text-anchor="middle" font-size="24" font-weight="600" fill="#e2e8f0" letter-spacing="1">AI AGENT ORCHESTRATOR</text>
+
+  <rect x="268" y="528" width="160" height="66" rx="12" fill="#1a1533" stroke="#a855f7" stroke-width="2"/>
+  <rect x="472" y="528" width="160" height="66" rx="12" fill="#0c2233" stroke="#22d3ee" stroke-width="2"/>
+  <text x="348" y="568" text-anchor="middle" font-size="19" font-weight="600" fill="#e9d5ff" letter-spacing="1">RULES</text>
+  <text x="552" y="568" text-anchor="middle" font-size="19" font-weight="600" fill="#a5f3fc" letter-spacing="1">DISPATCHER</text>
+
+  <!-- ===================== Tier 3: Knowledge Vault ===================== -->
+  <rect x="120" y="736" width="660" height="140" rx="20" fill="#10162880" stroke="#334155" stroke-width="1.5"/>
+  <text x="450" y="778" text-anchor="middle" font-size="22" font-weight="600" fill="#e2e8f0" letter-spacing="1">MARKDOWN KNOWLEDGE VAULT</text>
+
+  <!-- Raw inbox feeds (stacked bars) -->
+  <g filter="url(#glow)">
+    <rect x="170" y="800" width="150" height="14" rx="7" fill="url(#feeds)"/>
+    <rect x="170" y="822" width="150" height="14" rx="7" fill="url(#feeds)"/>
+    <rect x="170" y="844" width="150" height="14" rx="7" fill="url(#feeds)"/>
+  </g>
+  <text x="245" y="872" text-anchor="middle" font-size="12" font-weight="500" fill="#94a3b8" letter-spacing="0.5">RAW INBOX FEEDS</text>
+
+  <!-- Compiled graph nodes -->
+  <g stroke="#475569" stroke-width="1.5" opacity="0.8">
+    <line x1="320" y1="807" x2="470" y2="812"/>
+    <line x1="320" y1="829" x2="470" y2="812"/>
+    <line x1="320" y1="851" x2="530" y2="845"/>
+    <line x1="470" y1="812" x2="530" y2="845"/>
+    <line x1="530" y1="845" x2="600" y2="808"/>
+    <line x1="530" y1="845" x2="590" y2="862"/>
+    <line x1="600" y1="808" x2="640" y2="835"/>
+    <line x1="590" y1="862" x2="640" y2="835"/>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="470" cy="812" r="9" fill="#22d3ee"/>
+    <circle cx="530" cy="845" r="8" fill="#22d3ee"/>
+    <circle cx="600" cy="808" r="8" fill="#f59e0b"/>
+    <circle cx="640" cy="835" r="7" fill="#f59e0b"/>
+    <circle cx="590" cy="862" r="6" fill="#f59e0b"/>
+  </g>
+  <text x="595" y="888" text-anchor="middle" font-size="12" font-weight="500" fill="#94a3b8" letter-spacing="0.5">COMPILED MARKDOWN GRAPH NODES</text>
+</svg>

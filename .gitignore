@@ -1,0 +1,38 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.so
+!*.dll
+
+# Build / editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# OS
+ehthumbs.db
+Desktop.ini
+
+# Never commit recovered artifacts or the samples they came from.
+# The knowledge base records method + hashes + gate JSON; binaries do not
+# belong in git history, which cannot forget them. If you need to share a
+# result, attach it to an issue or a PR as a release asset, not a commit.
+*.apk
+*.dex
+*.aab
+*.apks
+*.xapk
+*.idsig
+*.bin
+crackme*
+sample*
+samples/
+# ...but keep the committed sample the docs reference, if you add one:
+!knowledge_base/wiki/**/*.apk
+
+# Scratch output from the fast paths
+*-unpacked.apk
+*-unpacked-dex/
+unpack-*/

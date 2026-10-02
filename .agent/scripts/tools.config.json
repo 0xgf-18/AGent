@@ -1,0 +1,148 @@
+{
+  "_comment": "Tool discovery config for tool_discover.py. Each entry: key (unique id, also module/distribution name for module tools), name, category, search (path candidates -> env-expanded/globbed, or bare command names looked up on PATH), version_args, version_regex, jar (run via java -jar), module (python module -> importlib.metadata).",
+  "tools": [
+    {
+      "key": "adb",
+      "name": "adb",
+      "category": "runtime",
+      "search": [
+        "%LOCALAPPDATA%\\Android\\Sdk\\platform-tools\\adb.exe",
+        "adb"
+      ],
+      "version_args": ["version"],
+      "version_regex": "(\\d+\\.\\d+\\.\\d+)"
+    },
+    {
+      "key": "apktool",
+      "name": "apktool",
+      "category": "unpacking",
+      "search": [
+        "%USERPROFILE%\\Documents\\Default Project\\tools\\apktool.jar",
+        "apktool.jar"
+      ],
+      "jar": true,
+      "version_args": ["--version"],
+      "version_regex": "(\\d+\\.\\d+\\.\\d+)"
+    },
+    {
+      "key": "jadx",
+      "name": "jadx",
+      "category": "decompiler",
+      "search": [
+        "%TEMP%\\opencode\\jadx\\bin\\jadx.bat",
+        "jadx"
+      ],
+      "version_args": ["--version"],
+      "version_regex": "(\\d+\\.\\d+\\.\\d+)"
+    },
+    {
+      "key": "java",
+      "name": "java",
+      "category": "base",
+      "search": [
+        "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.20.101-hotspot\\bin\\java.exe",
+        "java"
+      ],
+      "version_args": ["-version"],
+      "version_regex": "(\\d+\\.\\d+\\.\\d+)"
+    },
+    {
+      "key": "aapt2",
+      "name": "aapt2",
+      "category": "build",
+      "search": [
+        "%LOCALAPPDATA%\\Android\\Sdk\\build-tools\\*\\aapt2.exe",
+        "aapt2"
+      ],
+      "version_args": ["version"],
+      "version_regex": "(\\d+\\.\\d+\\.\\d+)"
+    },
+    {
+      "key": "aapt",
+      "name": "aapt",
+      "category": "build",
+      "search": [
+        "%LOCALAPPDATA%\\Android\\Sdk\\build-tools\\*\\aapt.exe",
+        "aapt"
+      ],
+      "version_args": ["v"],
+      "version_regex": "(\\d+\\.\\d+\\.\\d+)"
+    },
+    {
+      "key": "zipalign",
+      "name": "zipalign",
+      "category": "build",
+      "search": [
+        "%LOCALAPPDATA%\\Android\\Sdk\\build-tools\\*\\zipalign.exe",
+        "zipalign"
+      ],
+      "version_args": ["-v"],
+      "version_regex": "Android Asset Packaging Tool: zipalign[^\\n]*?(\\d+\\.\\d+\\.\\d+|v\\d+)"
+    },
+    {
+      "key": "apksigner",
+      "name": "apksigner",
+      "category": "build",
+      "search": [
+        "%LOCALAPPDATA%\\Android\\Sdk\\build-tools\\*\\apksigner.bat",
+        "apksigner"
+      ],
+      "version_args": ["--version"],
+      "version_regex": "(\\d+\\.\\d+\\.\\d+)"
+    },
+    {
+      "key": "dexdump",
+      "name": "dexdump",
+      "category": "decompiler",
+      "search": [
+        "%LOCALAPPDATA%\\Android\\Sdk\\build-tools\\*\\dexdump.exe",
+        "dexdump"
+      ],
+      "version_args": ["-h"],
+      "version_regex": "(?i)usage[^\\n]*"
+    },
+    {
+      "key": "git",
+      "name": "git",
+      "category": "base",
+      "search": ["git"],
+      "version_args": ["--version"],
+      "version_regex": "(\\d+\\.\\d+\\.\\d+)"
+    },
+    {
+      "key": "capstone",
+      "name": "capstone",
+      "category": "analysis-lib",
+      "module": "capstone",
+      "distribution": "capstone"
+    },
+    {
+      "key": "pycryptodome",
+      "name": "pycryptodome (Crypto)",
+      "category": "analysis-lib",
+      "module": "Crypto",
+      "distribution": "pycryptodome"
+    },
+    {
+      "key": "cryptography",
+      "name": "cryptography",
+      "category": "analysis-lib",
+      "module": "cryptography",
+      "distribution": "cryptography"
+    },
+    {
+      "key": "pyyaml",
+      "name": "PyYAML",
+      "category": "analysis-lib",
+      "module": "yaml",
+      "distribution": "pyyaml"
+    },
+    {
+      "key": "frida",
+      "name": "frida (python)",
+      "category": "runtime-instrumentation",
+      "module": "frida",
+      "distribution": "frida"
+    }
+  ]
+}
