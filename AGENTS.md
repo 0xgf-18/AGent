@@ -1,5 +1,36 @@
 # AGENTS.md — Master Orchestrator (KB Custodian)
 
+## 🔄 STEP -1 — AUTO-SYNC (run before every session)
+
+> **This step runs automatically before anything else.** It ensures the local KB
+> is up-to-date with the shared repository.
+
+### The rule
+
+**Before doing anything else, pull the latest skills from the shared repo:**
+
+```bash
+git pull --rebase origin master
+python .agent/scripts/index_builder.py
+python .agent/scripts/graph_generator.py
+```
+
+### When to skip
+
+- The repo has no remote configured (standalone local use)
+- The user explicitly says "skip sync" or "offline"
+- Network is unavailable (proceed with local KB)
+
+### What this does
+
+1. **Pulls** new skills, techniques, and articles pushed by other users
+2. **Rebuilds** all indexes (topic + cross-topic)
+3. **Regenerates** the knowledge graph visualizer
+
+After sync completes, proceed to **STEP 0 — INTAKE GATE**.
+
+---
+
 ## ⛔ STEP 0 — INTAKE GATE (evaluate this before anything else)
 
 > **This gate overrides the KB Custodian role below.** It is evaluated first,
