@@ -48,12 +48,6 @@ RE and security notes rot fast: opcodes get paraphrased away, tool versions go u
 
 ---
 
-## Architecture
-
-<p align="center">
-  <img src="documentation/architecture.png" alt="3-tier AI agent system: user input commands (ingest / compile / search) → AI agent orchestrator (rules + dispatcher) → markdown knowledge vault (raw feeds → compiled graph nodes)" width="620">
-</p>
-
 ## Knowledge Graph
 
 <p align="center">
@@ -63,34 +57,6 @@ RE and security notes rot fast: opcodes get paraphrased away, tool versions go u
 The interactive knowledge graph visualizer renders every wiki article as a node colored by topic, with edges showing cross-references. Open `knowledge_base/visualizer/index.html` in a browser to explore the KB interactively.
 
 The system is three tiers: **user commands** (`ingest` / `compile` / `search`) drive an **AI agent orchestrator** (behavioral rules + a mode dispatcher), which reads from and writes to the **markdown knowledge vault** — turning raw inbox feeds into a compiled, cross-linked graph of articles.
-
-```
-./ (project root)
-├── AGENTS.md                  ← Master orchestrator / mode dispatcher (read every session)
-├── .kb/                       ← The agent's "firmware": rules, protocols, schemas, scripts
-│   ├── core-rules.md          ← Anti-hallucination system + behavioral rules (always loaded)
-│   ├── read-protocol.md       ← Query mode: how to traverse the KB and answer
-│   ├── write-pipeline.md      ← Compile mode: raw file → structured wiki articles
-│   ├── ingest-protocol.md     ← Crawl mode: URL → raw markdown + local images
-│   ├── index-formats.md       ← Templates for master/topic/cross-topic indexes
-│   ├── maintenance.md         ← health-check / gap report / contradictions
-│   ├── schemas/               ← Per-content-type article schemas
-│   │   ├── _common-metadata.md
-│   │   ├── pentest-finding.md
-│   │   ├── malware-analysis.md
-│   │   ├── research-paper.md
-│   │   ├── api-reference.md
-│   │   ├── analysis-notes.md
-│   │   └── blog-writeup.md
-│   └── scripts/
-│       ├── crawl.py           ← Portable web crawler (readability + image downloader)
-│       ├── graph_generator.py ← Builds graph_data.js from wiki links
-│       └── requirements.txt
-└── knowledge_base/            ← The isolated KB environment (all persistent state)
-    ├── raw/                   ← Inbox: unprocessed feeds/reports + downloaded assets
-    ├── wiki/                  ← The compiled markdown KB (Obsidian-style [[links]])
-    └── graph/                 ← Interactive knowledge-graph visualizer (index.html)
-```
 
 The LLM reads `AGENTS.md` first, matches the user's request to a **mode**, and loads only the instruction files that mode needs.
 
