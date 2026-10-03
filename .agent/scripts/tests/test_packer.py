@@ -21,7 +21,7 @@ from pathlib import Path
 
 SCRIPTS = Path(__file__).resolve().parent.parent
 REPO = SCRIPTS.parent.parent
-WIKI = REPO / "knowledge_base" / "wiki"
+WIKI = REPO / "vault" / "wiki"
 
 results = []
 
@@ -167,7 +167,7 @@ def main() -> int:
         check("kb_search packer parse", False, f"{e}: {out[:200]}")
 
     # 5. graph --------------------------------------------------------------------
-    g = REPO / "knowledge_base" / "graph" / "graph_data.js"
+    g = REPO / "vault" / "graph" / "graph_data.js"
     txt = g.read_text(encoding="utf-8", errors="ignore") if g.exists() else ""
     check("graph has packer nodes", '"wiki/packers/' in txt)
     check("graph has no environments nodes", '"id": "wiki/environments' not in txt)

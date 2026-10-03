@@ -2,8 +2,8 @@
 """
 Knowledge Base Graph Generator & Visualizer Launcher
 
-Parses all Markdown files in knowledge_base/wiki/, extracts Obsidian links [[wiki/...]],
-builds a node-edge graph, saves it to knowledge_base/graph/graph_data.js,
+Parses all Markdown files in vault/articles/, extracts Obsidian links [[wiki/...]],
+builds a node-edge graph, saves it to vault/visualizer/graph_data.js,
 and optionally opens the web visualizer in the default browser.
 """
 
@@ -182,7 +182,7 @@ def build_graph(wiki_dir: Path):
             "id": node_id_norm,
             "display_id": node_id,
             "title": scrub(title),
-            "rel_path": f"knowledge_base/wiki/{rel_path.as_posix()}",
+            "rel_path": f"vault/articles/{rel_path.as_posix()}",
             "topic": topic,
             "color": topic_colors.get(topic, "#8b5cf6"),
             "type": str(node_type),
@@ -236,8 +236,8 @@ def main():
 
     script_dir = Path(__file__).resolve().parent
     kb_root = script_dir.parent.parent
-    wiki_dir = kb_root / "knowledge_base" / "wiki"
-    graph_dir = kb_root / "knowledge_base" / "graph"
+    wiki_dir = kb_root / "vault" / "articles"
+    graph_dir = kb_root / "vault" / "visualizer"
 
     if not wiki_dir.is_dir():
         print(f"Error: {wiki_dir} does not exist.", file=sys.stderr)

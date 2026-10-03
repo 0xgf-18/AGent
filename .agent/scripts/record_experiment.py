@@ -5,7 +5,7 @@ Record an experiment — Phase 3 of the research loop
 
 Reads a JSON payload (file or stdin), validates it against the schema rules,
 allocates the next EXP-XXXX id (never reused) and writes
-knowledge_base/wiki/experiments/EXP-XXXX.md.
+vault/articles/experiments/EXP-XXXX.md.
 
 Validation refuses to write when:
   - required fields are missing (steps, learning, toolset, environment, ...)
@@ -31,7 +31,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import kb_ids  # noqa: E402
 
-WIKI = Path(__file__).resolve().parent.parent.parent / "knowledge_base" / "wiki"
+WIKI = Path(__file__).resolve().parent.parent.parent / "vault" / "articles"
 EXPERIMENTS = WIKI / "experiments"
 
 VALID_RESULTS = ("SUCCESS", "PARTIAL", "FAILURE")

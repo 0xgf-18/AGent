@@ -26,7 +26,7 @@ from pathlib import Path
 
 SCRIPTS = Path(__file__).resolve().parent.parent
 REPO = SCRIPTS.parent.parent
-WIKI = REPO / "knowledge_base" / "wiki"
+WIKI = REPO / "vault" / "wiki"
 APK = Path("C:/Users/F A H A D/Desktop/New folder (3)/myprotectorproject.apk")
 
 results = []

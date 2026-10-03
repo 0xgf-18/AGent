@@ -2,7 +2,7 @@
 """
 KB ID allocator.
 
-Scans knowledge_base/wiki/**/*.md (frontmatter AND body) for ID patterns and
+Scans vault/articles/**/*.md (frontmatter AND body) for ID patterns and
 allocates the next free sequential ID for a given prefix. IDs are never reused:
 the allocator always returns (max_seen + 1), even if an article was deleted.
 
@@ -95,7 +95,7 @@ def main() -> int:
     ap.add_argument("--wiki", metavar="DIR", help="override wiki directory")
     args = ap.parse_args()
 
-    wiki_dir = Path(args.wiki) if args.wiki else kb_root() / "knowledge_base" / "wiki"
+    wiki_dir = Path(args.wiki) if args.wiki else kb_root() / "vault" / "articles"
     maxima = scan(wiki_dir)
 
     if args.has:

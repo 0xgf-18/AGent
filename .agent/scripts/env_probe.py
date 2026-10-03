@@ -298,7 +298,7 @@ def probe(adb: str | None, serial: str | None) -> dict:
 
     # --- Host analysis directories -------------------------------------------
     repo = Path(__file__).resolve().parent.parent.parent
-    host_dirs = {"repo_root": str(repo), "wiki": str(repo / "knowledge_base" / "wiki")}
+    host_dirs = {"repo_root": str(repo), "wiki": str(repo / "vault" / "articles")}
     ok = os.access(repo, os.W_OK)
     host_dirs["writable"] = ok
     profile["host_dirs"] = host_dirs

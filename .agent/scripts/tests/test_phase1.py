@@ -22,7 +22,7 @@ from pathlib import Path
 
 SCRIPTS = Path(__file__).resolve().parent.parent
 REPO = SCRIPTS.parent.parent
-WIKI = REPO / "knowledge_base" / "wiki"
+WIKI = REPO / "vault" / "wiki"
 
 results = []
 
@@ -157,7 +157,7 @@ def main() -> int:
             check("index_builder dry-run", False, f"{e} / {e2}: {out[:200]}")
 
     # 7. graph data --------------------------------------------------------------------
-    g = REPO / "knowledge_base" / "graph" / "graph_data.js"
+    g = REPO / "vault" / "graph" / "graph_data.js"
     if g.exists():
         txt = g.read_text(encoding="utf-8", errors="ignore")
         m = re.search(r'"id":', txt)

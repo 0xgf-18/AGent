@@ -31,7 +31,7 @@ import kb_ids  # noqa: E402
 import tool_discover  # noqa: E402
 
 TODAY = dt.date.today().isoformat()
-WIKI = Path(__file__).resolve().parent.parent.parent / "knowledge_base" / "wiki"
+WIKI = Path(__file__).resolve().parent.parent.parent / "vault" / "articles"
 APKS_DIR = WIKI / "apks"
 
 # (entry-name regex, protection, confidence, notes)

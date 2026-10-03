@@ -29,7 +29,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import kb_ids  # noqa: E402
 
-WIKI = Path(__file__).resolve().parent.parent.parent / "knowledge_base" / "wiki"
+WIKI = Path(__file__).resolve().parent.parent.parent / "vault" / "articles"
 TECHS = WIKI / "techniques"
 
 CATEGORIES = ("unpacking", "deobfuscation", "anti-debug-bypass", "anti-root-bypass",

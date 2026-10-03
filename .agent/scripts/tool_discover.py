@@ -35,7 +35,7 @@ HOST = os.name == "nt"
 TODAY = dt.date.today().isoformat()
 
 CONFIG_PATH = Path(__file__).resolve().parent / "tools.config.json"
-REGISTRY_DIR = Path(__file__).resolve().parent.parent.parent / "knowledge_base" / "wiki" / "tool-registry"
+REGISTRY_DIR = Path(__file__).resolve().parent.parent.parent / "vault" / "articles" / "tool-registry"
 REPO = Path(__file__).resolve().parent.parent.parent
 
 # Schema categories (.kb/schemas/tool-registry.md)
@@ -286,7 +286,7 @@ def load_registry() -> dict:
 def discover(write: bool = False, serial: str | None = None, config_path: Path = CONFIG_PATH) -> list[dict]:
     cfg = json.loads(Path(config_path).read_text(encoding="utf-8"))
     registry = load_registry()
-    maxima = kb_ids.scan(kb_ids.kb_root() / "knowledge_base" / "wiki")
+    maxima = kb_ids.scan(kb_ids.kb_root() / "vault" / "articles")
     next_tr = maxima.get("TR", 0) + 1
     records = []
 

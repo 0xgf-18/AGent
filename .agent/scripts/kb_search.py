@@ -39,7 +39,7 @@ try:
 except ImportError:
     HAS_YAML = False
 
-WIKI = Path(__file__).resolve().parent.parent.parent / "knowledge_base" / "wiki"
+WIKI = Path(__file__).resolve().parent.parent.parent / "vault" / "articles"
 
 
 def parse_fm(text: str) -> dict:

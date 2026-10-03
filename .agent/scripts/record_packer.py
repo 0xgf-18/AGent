@@ -28,7 +28,7 @@ import re
 import sys
 from pathlib import Path
 
-WIKI = Path(__file__).resolve().parent.parent.parent / "knowledge_base" / "wiki"
+WIKI = Path(__file__).resolve().parent.parent.parent / "vault" / "articles"
 PACKERS = WIKI / "packers"
 
 STATUSES = ("not_attempted", "attempted", "unpacked", "blocked")

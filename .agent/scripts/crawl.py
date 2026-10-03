@@ -9,8 +9,8 @@ Usage:
     python crawl.py <URL> [--output-dir <path>]
 
 Output:
-    knowledge_base/raw/feeds/<slug>.md
-    knowledge_base/raw/assets/<slug>/<image-files>
+    vault/inbox/feeds/<slug>.md
+    vault/inbox/assets/<slug>/<image-files>
 
 Dependencies (install via .kb/scripts/requirements.txt):
     requests, beautifulsoup4, markdownify, readability-lxml, lxml
@@ -598,7 +598,7 @@ def crawl(url: str, kb_root: Path) -> dict:
 
     # --- Step 3: Download images + recover figures ---
     print("[3/5] Downloading images ...")
-    assets_dir = kb_root / "knowledge_base" / "raw" / "assets" / slug
+    assets_dir = kb_root / "vault" / "inbox" / "assets" / slug
     assets_dir.mkdir(parents=True, exist_ok=True)
     result["assets_dir"] = str(assets_dir)
 
@@ -636,7 +636,7 @@ def crawl(url: str, kb_root: Path) -> dict:
 
     # --- Step 5: Write output ---
     print("[5/5] Writing raw markdown ...")
-    raw_dir = kb_root / "knowledge_base" / "raw" / "feeds"
+    raw_dir = kb_root / "vault" / "inbox" / "feeds"
     raw_dir.mkdir(parents=True, exist_ok=True)
 
     raw_file = raw_dir / f"{slug}.md"
@@ -689,10 +689,10 @@ def main():
         kb_root = Path(__file__).resolve().parent.parent.parent
 
     # Verify KB structure
-    if not (kb_root / "knowledge_base" / "raw").is_dir():
+    if not (kb_root / "vault" / "inbox").is_dir():
         print(
             f"ERROR: KB root not found at {kb_root}. "
-            f"Expected knowledge_base/raw/ directory.",
+            f"Expected vault/inbox/ directory.",
             file=sys.stderr,
         )
         sys.exit(1)
