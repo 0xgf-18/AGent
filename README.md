@@ -100,6 +100,33 @@ Drive the agent with natural language or these shorthand commands (see `AGENTS.m
 | `health-check` | Scan for dead links, orphans, missing YAML, stale stubs |
 | `gap report` | Report dead links, stale stubs, and underdeveloped topics |
 | `contradictions` | List all articles carrying `[X]` conflict markers |
+| `modify <apk>` | Analyze, unpack, patch, rebuild, sign, and validate a modified APK |
+
+## APK Modification
+
+The agent supports full APK reverse-engineering and modification:
+
+1. **Inspect** — fingerprint, manifest, DEX, native libs, assets, protections
+2. **Unpack** — multi-stage unpacking with recursive layer recovery
+3. **Analyze** — static + dynamic analysis, obfuscation identification
+4. **Patch** — DEX (smali) and native (ELF) patching
+5. **Rebuild** — apktool rebuild with consistency checks
+6. **Sign** — sign with test keystore and verify
+7. **Validate** — install, launch, and runtime behavior verification
+
+### Modification Categories
+
+- Change application behavior
+- Modify UI / resources
+- Patch method logic (DEX / smali)
+- Patch native code (ARM32/ARM64/x86/x86_64)
+- Modify authentication / licensing (test builds only)
+- Disable integrity / anti-tamper mechanisms
+- Instrument methods with logging
+- Replace encrypted assets
+- Other custom modifications
+
+See `.agent/modification-protocol.md` for the full protocol.
 
 ---
 

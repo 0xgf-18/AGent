@@ -169,13 +169,14 @@ Determine your task from the user's prompt, then read the corresponding instruct
 
 | Task | Load these files (in order) |
 |---|---|
-| **Answer a question (Query)** | `.kb/core-rules.md` → `.kb/read-protocol.md` |
-| **Compile a raw file (Write)** | `.kb/core-rules.md` → `.kb/write-pipeline.md` → `.kb/schemas/<type>.md` |
-| **Analyze an APK / run experiments (Research Loop)** | `.kb/core-rules.md` → `.kb/experiment-protocol.md` → `.kb/schemas/<type>.md` |
-| **Ingest a URL (Crawl Only)** | `.kb/ingest-protocol.md` |
-| **Health check / gap report** | `.kb/maintenance.md` |
-| **Create/update indexes** | `.kb/index-formats.md` |
-| **Generate Knowledge Graph** | Run `python3 .kb/scripts/graph_generator.py --open` |
+| **Answer a question (Query)** | `.agent/core-rules.md` → `.agent/read-protocol.md` |
+| **Compile a raw file (Write)** | `.agent/core-rules.md` → `.agent/write-pipeline.md` → `.agent/schemas/<type>.md` |
+| **Analyze an APK / run experiments (Research Loop)** | `.agent/core-rules.md` → `.agent/experiment-protocol.md` → `.agent/schemas/<type>.md` |
+| **Modify / patch an APK (Modification)** | `.agent/core-rules.md` → `.agent/modification-protocol.md` → `.agent/schemas/<type>.md` |
+| **Ingest a URL (Crawl Only)** | `.agent/ingest-protocol.md` |
+| **Health check / gap report** | `.agent/maintenance.md` |
+| **Create/update indexes** | `.agent/index-formats.md` |
+| **Generate Knowledge Graph** | Run `python3 .agent/scripts/graph_generator.py --open` |
 
 ---
 
